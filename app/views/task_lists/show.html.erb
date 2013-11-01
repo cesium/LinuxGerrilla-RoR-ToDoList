@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task_list.name %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @task_list.owner.name %>
+</p>
+
+<ul>
+  <% @task_list.tasks.each do |task| %>
+    <li><%= link_to task.name, task %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_task_list_path(@task_list) %> |
+<%= link_to 'Back', task_lists_path %>

@@ -1,0 +1,29 @@
+<h1>Listing list_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Task list</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @list_users.each do |list_user| %>
+      <tr>
+        <td><%= list_user.task_list %></td>
+        <td><%= list_user.user %></td>
+        <td><%= link_to 'Show', list_user %></td>
+        <td><%= link_to 'Edit', edit_list_user_path(list_user) %></td>
+        <td><%= link_to 'Destroy', list_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New List user', new_list_user_path %>
